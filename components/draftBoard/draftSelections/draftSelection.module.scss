@@ -1,0 +1,19 @@
+@import "../../../styles/mixins.module.scss";
+
+.draftSelections {
+  position: fixed;
+  left: 100px;
+  ul {
+    @include ul;
+  }
+}
+
+.selectedPlayer {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.group {
+  margin: 0 10px 0 0;
+}
