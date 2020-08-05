@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { auth, initializeApp } from "firebase";
+import getConfig from "next/config";
+const { publicRuntimeConfig } = getConfig();
 // import { useRouter } from "next/router";
 
 const defaultUser = {
@@ -7,7 +9,16 @@ const defaultUser = {
   displayName: "",
 };
 
-const firebaseConfig = process.env.FIREBASE_CONFIG;
+const firebaseConfig = {
+  apiKey: publicRuntimeConfig.FIREBASE_API_KEY,
+  authDomain: "golf-draft-fdf5b.firebaseapp.com",
+  databaseURL: "https://golf-draft-fdf5b.firebaseio.com",
+  projectId: "golf-draft-fdf5b",
+  storageBucket: "golf-draft-fdf5b.appspot.com",
+  messagingSenderId: "696363008338",
+  appId: "1:696363008338:web:38f1894846cdf9bd66ba8b",
+  measurementId: "G-SLHJKPLPH6",
+};
 
 try {
   initializeApp(firebaseConfig);

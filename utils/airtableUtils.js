@@ -1,6 +1,8 @@
 import Airtable from "airtable";
+import getConfig from "next/config";
 
-const apiKey = process.env.AIRTABLE_API_KEY;
+const { publicRuntimeConfig } = getConfig();
+const apiKey = publicRuntimeConfig.AIRTABLE_API_KEY;
 
 Airtable.configure({
   endpointUrl: "https://api.airtable.com",

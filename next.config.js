@@ -1,9 +1,11 @@
 const path = require("path");
-const { env } = require("./env");
 
 module.exports = {
   sassOptions: {
     includePaths: [path.join(__dirname, "styles")],
   },
-  env,
+  publicRuntimeConfig: {
+    AIRTABLE_API_KEY: process.env.AIRTABLE_API_KEY,
+    FIREBASE_API_KEY: process.env.FIREBASE_API_KEY,
+  },
 };
